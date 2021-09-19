@@ -1,0 +1,30 @@
+import math
+
+amount = eval(input("What peasant pocket change is to be converted?"))
+
+totalCents = amount * 100
+totalDollars = math.floor(totalCents/100)
+
+centsLeft = totalCents % 100
+quarterAmount = math.floor(centsLeft / 25)
+
+centsLeft = centsLeft % 25
+dimeAmount = math.floor(centsLeft / 10)
+
+centsLeft = centsLeft % 10
+nickelAmount = math.floor(centsLeft / 5)
+
+centsLeft = centsLeft % 5
+pennyNumber = int(centsLeft)
+
+print("Number of dollars:", totalDollars, end = '.')
+print("Number of quarters:", quarterAmount)
+print("Number of dimes:", dimeAmount)
+print("Number of nickels:", nickelAmount)
+print("Number of pennies:", pennyNumber)
+
+print("You have:\n", "\t", totalDollars, "dollars\n", "\t", quarterAmount, "quarters\n",
+    "\t", dimeAmount, "dimes\n", "\t", nickelAmount, "nickels\n", "\t", pennyNumber, "pennies")
+	
+
+	

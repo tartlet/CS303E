@@ -1,0 +1,24 @@
+import math
+
+x1, y1 = eval(input("First point of triangle:"))
+x2, y2 = eval(input("Seconnd point of triangle:"))
+x3, y3 = eval(input("Third point of triangle:"))
+
+# Compute side lengths 
+a = math.sqrt((x2 - x1)**2+(y2 - x1)**2)
+print("side a is:", a)
+b = math.sqrt((x3 - x2)**2+(y3 - y2)**2)
+print("side b is:", b)
+c = math.sqrt((x1 - x3)**2+(y1 - x3)**2)
+print("side c is:", c)
+
+A = math.acos((a**2 - b**2 - c**2) / (-2 * b * c))	
+B = math.acos((b**2 - a**2 - c**2) / (-2 * a * c))
+C = math.acos((c**2 - b**2 - a**2) / (-2 * a * b))
+
+angleList = [str(round(math.degrees(A), 3)), str(round(math.degrees(B), 3)), str(round(math.degrees(C), 3))]
+
+listString = ', '.join(angleList)
+print("The angles of this triangle are", round(math.degrees(A), 3), round(math.degrees(B), 3), round(math.degrees(C) , 3))
+
+print('The angles of this triangle are', listString)
